@@ -51,8 +51,8 @@ target_transform = transforms.Compose([
     transforms.ToTensor(),
 ])
 
-source_dataset = ImageFolder('real_or_drawing/train_data', transform=source_transform)
-target_dataset = ImageFolder('real_or_drawing/test_data', transform=target_transform)
+source_dataset = ImageFolder(os.path.join(sys.argv[1],'train_data'), transform=source_transform)
+target_dataset = ImageFolder(os.path.join(sys.argv[1],'test_data'), transform=target_transform)
 
 source_dataloader = DataLoader(source_dataset, batch_size=32, shuffle=True)
 target_dataloader = DataLoader(target_dataset, batch_size=32, shuffle=True)
