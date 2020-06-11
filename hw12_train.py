@@ -34,7 +34,7 @@ source_transform = transforms.Compose([
     # 水平翻轉 (Augmentation)
     transforms.RandomHorizontalFlip(),
     # 旋轉15度內 (Augmentation)，旋轉後空的地方補0
-    transforms.RandomRotation(15, fill=(0,)),
+    transforms.RandomRotation(15),
     # 最後轉成Tensor供model使用。
     transforms.ToTensor(),
 ])
@@ -46,7 +46,7 @@ target_transform = transforms.Compose([
     # 水平翻轉 (Augmentation)
     transforms.RandomHorizontalFlip(),
     # 旋轉15度內 (Augmentation)，旋轉後空的地方補0
-    transforms.RandomRotation(15, fill=(0,)),
+    transforms.RandomRotation(15),
     # 最後轉成Tensor供model使用。
     transforms.ToTensor(),
 ])
